@@ -21,6 +21,28 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+  let tokyoElement = document.querySelector("#tokyo");
+  if (tokyoElement) {
+    let tokyoDateElement = tokyoElement.querySelector(".date");
+    let tokyoTimeElement = tokyoElement.querySelector(".time");
+    let tokyoTime = moment().tz("Asia/Tokyo");
+
+    tokyoDateElement.innerHTML = tokyoTime.format("MMMM Do YYYY");
+    tokyoTimeElement.innerHTML = tokyoTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+  let melbourneElement = document.querySelector("#melbourne");
+  if (melbourneElement) {
+    let melbourneDateElement = melbourneElement.querySelector(".date");
+    let melbourneTimeElement = melbourneElement.querySelector(".time");
+    let melbourneTime = moment().tz("Australia/Melbourne");
+
+    melbourneDateElement.innerHTML = melbourneTime.format("MMMM Do YYYY");
+    melbourneTimeElement.innerHTML = melbourneTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
